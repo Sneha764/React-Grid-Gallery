@@ -49,6 +49,16 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Alternate layout style */
+.alt-layout {
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
 /* To make dashboard responsive */
 @media (max-width: 768px) {
   .dashboard-grid {
@@ -61,3 +71,4 @@
     grid-template-rows: auto;
   }
 }
+
