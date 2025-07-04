@@ -6,14 +6,14 @@ const imageData = [
     id: 1,
     title: "Mountains",
     description: "Snowy mountain view",
-    // colSpan: 2,
+    colSpan: 2,
     url: "https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fHww"   
   },
   {
     id: 2,
     title: "Forest",
     description: "Green trees in a forest",
-    // rowSpan: 3,
+    rowSpan: 2,
     url: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9yZXN0fGVufDB8fDB8fHww"
   },
   {
@@ -41,6 +41,10 @@ function App() {
             title={img.title}
             description={img.description}
             url={img.url}
+            style={{  // This code dynamically adds inline CSS styles to each card component 
+              gridColumn: img.colSpan ? `span ${img.colSpan}` : undefined,  // if img.colSpan has a value, else undefined is ignored
+              gridRow: img.rowSpan ? `span ${img.rowSpan}` : undefined
+            }}
           />
         ))}
       </div>
