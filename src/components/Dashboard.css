@@ -1,0 +1,63 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  height: 100vh;
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #eee;
+  padding: 1rem;
+}
+
+.main {
+  grid-area: main;
+  background: #ddd;
+  padding: 1rem;
+}
+
+.footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* To make dashboard responsive */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}

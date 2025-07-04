@@ -1,5 +1,7 @@
 import './App.css';
 import ImageCard from './components/ImageCard'; 
+import React from 'react';
+import Dashboard from './components/Dashboard';
 
 const imageData = [
   {
@@ -32,22 +34,8 @@ const imageData = [
 
 function App() {
   return (
-    <div className="App">
-      <h1>My Image Gallery</h1>
-      <div className="grid-container">
-        {imageData.map((img) => (
-          <ImageCard
-            key={img.id}    // key prop cant be accessed inside ImageCard function. for that write one more line: id = {img.id}
-            title={img.title}
-            description={img.description}
-            url={img.url}
-            style={{  // This code dynamically adds inline CSS styles to each card component 
-              gridColumn: img.colSpan ? `span ${img.colSpan}` : undefined,  // if img.colSpan has a value, else undefined is ignored
-              gridRow: img.rowSpan ? `span ${img.rowSpan}` : undefined
-            }}
-          />
-        ))}
-      </div>
+    <div>
+      <Dashboard />
     </div>
   );
 }
